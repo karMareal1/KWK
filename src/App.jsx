@@ -2,6 +2,16 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 const DualPortfolio = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true)
+
+  useEffect(() => {
+    // Apply theme to document
+    if (isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
+  }, [isDarkMode])
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
@@ -63,6 +73,17 @@ const DualPortfolio = () => {
 
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: '#0A0A0A', color: '#E8E8F0' }}>
+      {/* Theme Toggle Switch */}
+      <div className="theme-toggle-container">
+        <input
+          id="checkboxInput"
+          type="checkbox"
+          checked={!isDarkMode}
+          onChange={(e) => setIsDarkMode(!e.target.checked)}
+        />
+        <label className="toggleSwitch" htmlFor="checkboxInput"></label>
+      </div>
+
       {/* Hero Section */}
       <section id="hero" className="hero">
         <div className="hero-content">

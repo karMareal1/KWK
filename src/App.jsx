@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { ScrollDownIndicator } from './ScrollDownIndicator'
 
 const DualPortfolio = () => {
 
@@ -107,8 +106,6 @@ const DualPortfolio = () => {
             </button>
           </div>
         </div>
-
-        <ScrollDownIndicator targetElementId="hero" />
       </section>
 
       {/* Bio Section */}

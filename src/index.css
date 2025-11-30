@@ -37,15 +37,6 @@ body {
   }
 }
 
-@keyframes bounce-down {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-}
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -175,25 +166,6 @@ section {
 .btn-secondary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 48px rgba(255, 20, 147, 0.4);
-}
-
-.arrow-down {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.arrow-down svg {
-  width: 40px;
-  height: 40px;
-  color: rgba(0, 217, 255, 0.8);
-  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.4));
-  animation: bounce-down 2s ease-in-out infinite;
 }
 
 .bios {

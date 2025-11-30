@@ -8,6 +8,8 @@ html {
   scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Kedebideri&display=swap');
+
 /* Dark Mode (Default) */
 html[data-theme="dark"],
 html {
@@ -782,6 +784,13 @@ section {
   top: 2rem;
   right: 2rem;
   z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-container.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 #checkboxInput {
@@ -799,6 +808,25 @@ section {
   border-radius: 40px;
   cursor: pointer;
   transition-duration: 0.3s;
+}
+
+.toggleSwitch::before {
+  content: "light mode?";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Kedebideri', cursive;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.toggleSwitch:hover::before {
+  opacity: 1;
 }
 
 .toggleSwitch::after {

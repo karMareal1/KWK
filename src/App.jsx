@@ -3,6 +3,7 @@ import './App.css'
 
 const DualPortfolio = () => {
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isToggleVisible, setIsToggleVisible] = useState(true)
 
   useEffect(() => {
     // Apply theme to document
@@ -12,6 +13,18 @@ const DualPortfolio = () => {
       document.documentElement.setAttribute('data-theme', 'light')
     }
   }, [isDarkMode])
+
+  useEffect(() => {
+    // Hide toggle when scrolling
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      // Hide toggle if scrolled down more than 100px
+      setIsToggleVisible(scrollPosition < 100)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
@@ -74,7 +87,7 @@ const DualPortfolio = () => {
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       {/* Theme Toggle Switch */}
-      <div className="theme-toggle-container">
+      <div className={`theme-toggle-container ${!isToggleVisible ? 'hidden' : ''}`}>
         <input
           id="checkboxInput"
           type="checkbox"

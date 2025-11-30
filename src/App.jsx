@@ -72,7 +72,7 @@ const DualPortfolio = () => {
   ]
 
   return (
-    <div style={{ width: '100%', minHeight: '100vh', background: '#0A0A0A', color: '#E8E8F0' }}>
+    <div style={{ width: '100%', minHeight: '100vh', background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       {/* Theme Toggle Switch */}
       <div className="theme-toggle-container">
         <input

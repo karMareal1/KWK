@@ -308,6 +308,23 @@ const DualPortfolio = () => {
           <p>© 2025 The Partnership. Crafted with innovation and precision.</p>
         </div>
       </footer>
+
+      {/* Newsletter Section */}
+      <section className="newsletter-section">
+        <div className="newsletter-container">
+          <h2 className="newsletter-title">Stay Connected</h2>
+          <p className="newsletter-desc">Sign up for our email newsletter to get the latest updates, project launches, and exclusive insights from the partnership.</p>
+          <form className="newsletter-form" onSubmit={e => { e.preventDefault(); alert('Thank you for subscribing!'); }}>
+            <input
+              type="email"
+              className="newsletter-input"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit" className="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </section>
     </div>
   )
 }
